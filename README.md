@@ -19,3 +19,5 @@ negative reviews.
 | R52 	| 9,100 	| 6,532 	| 2,568 	| 8,892 	| 17,992 	| 52 	| 69.82 	|
 | Ohsumed 	| 7,400 	| 3,357 	| 4,043 	| 14,157 	| 21,557 	| 23 	| 135.82 	|
 | MR 	| 10,662 	| 7,108 	| 3,554 	| 18,764 	| 29,426 	| 2 	| 20.39 	|
+
+Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
