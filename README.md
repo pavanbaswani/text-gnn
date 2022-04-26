@@ -35,4 +35,10 @@ negative reviews.
 | Ohsumed  | 98.56              | 89.71        |
 | MR       | 76.45              | 76.25        |
 
+# Visualization
+
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/tsne_plots.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+
 Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
