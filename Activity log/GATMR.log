@@ -1,0 +1,70 @@
+==========================================
+SLURM_JOB_ID = 661177
+SLURM_NODELIST = gnode14
+SLURM_JOB_GPUS = 0,2,3
+==========================================
+/home2/prateekj/miniconda3/envs/myenv/lib/python3.7/site-packages/dgl/heterograph.py:72: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning('Recommend creating graphs by `dgl.graph(data)`'
+/home2/prateekj/GNN-for-text-classification/main.py:179: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  g.edata['w'] = F.softmax(e)
+Classifer(
+  (gcn1): MultiHeadGATLayer(
+    (heads): ModuleList(
+      (0): GATLayer()
+      (1): GATLayer()
+    )
+  )
+  (gcn2): MultiHeadGATLayer(
+    (heads): ModuleList(
+      (0): GATLayer()
+      (1): GATLayer()
+    )
+  )
+)
+[2022/4/26 12:20:06] Epoch: 1, train_loss= 0.69393, train_acc= 0.50938, val_loss= 0.69307, val_acc= 0.57183, time= 0.91910
+[2022/4/26 12:20:06] Epoch: 2, train_loss= 0.68963, train_acc= 0.57221, val_loss= 0.69246, val_acc= 0.66338, time= 0.54978
+[2022/4/26 12:20:07] Epoch: 3, train_loss= 0.68084, train_acc= 0.68490, val_loss= 0.69142, val_acc= 0.74085, time= 0.55285
+[2022/4/26 12:20:08] Epoch: 4, train_loss= 0.66847, train_acc= 0.79681, val_loss= 0.69078, val_acc= 0.73239, time= 0.55144
+[2022/4/26 12:20:08] Epoch: 5, train_loss= 0.65922, train_acc= 0.82901, val_loss= 0.69017, val_acc= 0.76056, time= 0.55187
+[2022/4/26 12:20:09] Epoch: 6, train_loss= 0.64991, train_acc= 0.85980, val_loss= 0.68961, val_acc= 0.77887, time= 0.55312
+[2022/4/26 12:20:09] Epoch: 7, train_loss= 0.64077, train_acc= 0.87996, val_loss= 0.68914, val_acc= 0.77887, time= 0.55342
+[2022/4/26 12:20:10] Epoch: 8, train_loss= 0.63242, train_acc= 0.88731, val_loss= 0.68871, val_acc= 0.77887, time= 0.55342
+[2022/4/26 12:20:10] Epoch: 9, train_loss= 0.62466, train_acc= 0.89497, val_loss= 0.68834, val_acc= 0.78873, time= 0.55224
+[2022/4/26 12:20:11] Epoch: 10, train_loss= 0.61746, train_acc= 0.90528, val_loss= 0.68807, val_acc= 0.79155, time= 0.55267
+[2022/4/26 12:20:11] Epoch: 11, train_loss= 0.61112, train_acc= 0.90966, val_loss= 0.68789, val_acc= 0.79296, time= 0.55334
+[2022/4/26 12:20:12] Epoch: 12, train_loss= 0.60553, train_acc= 0.91591, val_loss= 0.68778, val_acc= 0.79437, time= 0.55540
+[2022/4/26 12:20:12] Epoch: 13, train_loss= 0.60041, train_acc= 0.92029, val_loss= 0.68775, val_acc= 0.79014, time= 0.55494
+[2022/4/26 12:20:13] Epoch: 14, train_loss= 0.59582, train_acc= 0.92591, val_loss= 0.68778, val_acc= 0.79014, time= 0.55200
+[2022/4/26 12:20:14] Epoch: 15, train_loss= 0.59176, train_acc= 0.92951, val_loss= 0.68788, val_acc= 0.79859, time= 0.55198
+[2022/4/26 12:20:14] Epoch: 16, train_loss= 0.58802, train_acc= 0.93373, val_loss= 0.68802, val_acc= 0.79718, time= 0.55461
+[2022/4/26 12:20:15] Epoch: 17, train_loss= 0.58459, train_acc= 0.93857, val_loss= 0.68822, val_acc= 0.79577, time= 0.55446
+[2022/4/26 12:20:15] Early stopping...
+[2022/4/26 12:20:15] Optimization Finished!
+[2022/4/26 12:20:15] Test set results: 
+[2022/4/26 12:20:15] 	 loss= 0.67330, accuracy= 0.76252, time= 0.20515
+[2022/4/26 12:20:15] Test Precision, Recall and F1-Score...
+[2022/4/26 12:20:15]               precision    recall  f1-score   support
+[2022/4/26 12:20:15] 
+[2022/4/26 12:20:15]            0     0.7523    0.7828    0.7672      1777
+[2022/4/26 12:20:15]            1     0.7736    0.7423    0.7576      1777
+[2022/4/26 12:20:15] 
+[2022/4/26 12:20:15]     accuracy                         0.7625      3554
+[2022/4/26 12:20:15]    macro avg     0.7630    0.7625    0.7624      3554
+[2022/4/26 12:20:15] weighted avg     0.7630    0.7625    0.7624      3554
+[2022/4/26 12:20:15] 
+[2022/4/26 12:20:15] Macro average Test Precision, Recall and F1-Score...
+[2022/4/26 12:20:15] (0.762952788937192, 0.7625211029825549, 0.7624235965090975, None)
+[2022/4/26 12:20:15] Micro average Test Precision, Recall and F1-Score...
+[2022/4/26 12:20:15] (0.7625211029825548, 0.7625211029825548, 0.7625211029825548, None)
+[2022/4/26 12:20:15] Embeddings:
+[2022/4/26 12:20:15] Word_embeddings:18764
+[2022/4/26 12:20:15] Train_doc_embeddings:7108
+[2022/4/26 12:20:15] Test_doc_embeddings:3554
+[2022/4/26 12:20:15] Word_embeddings:
+[[0.         0.         0.         ... 0.08624088 0.15330954 0.02664213]
+ [0.         0.338685   0.         ... 0.09443803 0.01131196 0.        ]
+ [0.02177728 0.04671851 0.16495925 ... 0.         0.         0.        ]
+ ...
+ [0.14699899 0.         0.         ... 0.14260644 0.06212266 0.17308171]
+ [0.18825564 0.         0.10056929 ... 0.09490062 0.06881475 0.15735108]
+ [0.10779735 0.09028869 0.         ... 0.         0.         0.        ]]

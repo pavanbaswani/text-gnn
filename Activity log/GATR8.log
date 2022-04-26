@@ -1,0 +1,170 @@
+==========================================
+SLURM_JOB_ID = 661184
+SLURM_NODELIST = gnode14
+SLURM_JOB_GPUS = 0,2,3
+==========================================
+/home2/prateekj/miniconda3/envs/myenv/lib/python3.7/site-packages/dgl/heterograph.py:72: DGLWarning: Recommend creating graphs by `dgl.graph(data)` instead of `dgl.DGLGraph(data)`.
+  dgl_warning('Recommend creating graphs by `dgl.graph(data)`'
+/home2/prateekj/GNN-for-text-classification/main.py:179: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  g.edata['w'] = F.softmax(e)
+/home2/prateekj/miniconda3/envs/myenv/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home2/prateekj/miniconda3/envs/myenv/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home2/prateekj/miniconda3/envs/myenv/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home2/prateekj/miniconda3/envs/myenv/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Classifer(
+  (gcn1): MultiHeadGATLayer(
+    (heads): ModuleList(
+      (0): GATLayer()
+      (1): GATLayer()
+    )
+  )
+  (gcn2): MultiHeadGATLayer(
+    (heads): ModuleList(
+      (0): GATLayer()
+      (1): GATLayer()
+    )
+  )
+)
+[2022/4/26 12:25:26] Epoch: 1, train_loss= 2.05719, train_acc= 0.47661, val_loss= 2.06529, val_acc= 0.53102, time= 0.70253
+[2022/4/26 12:25:26] Epoch: 2, train_loss= 1.95021, train_acc= 0.53433, val_loss= 2.05559, val_acc= 0.62044, time= 0.30133
+[2022/4/26 12:25:27] Epoch: 3, train_loss= 1.86360, train_acc= 0.62852, val_loss= 2.04834, val_acc= 0.71715, time= 0.30075
+[2022/4/26 12:25:27] Epoch: 4, train_loss= 1.79858, train_acc= 0.73790, val_loss= 2.04342, val_acc= 0.76277, time= 0.30043
+[2022/4/26 12:25:27] Epoch: 5, train_loss= 1.75407, train_acc= 0.77436, val_loss= 2.04003, val_acc= 0.77007, time= 0.30011
+[2022/4/26 12:25:28] Epoch: 6, train_loss= 1.72263, train_acc= 0.77962, val_loss= 2.03741, val_acc= 0.77737, time= 0.30097
+[2022/4/26 12:25:28] Epoch: 7, train_loss= 1.69753, train_acc= 0.78388, val_loss= 2.03517, val_acc= 0.78102, time= 0.30205
+[2022/4/26 12:25:28] Epoch: 8, train_loss= 1.67570, train_acc= 0.79299, val_loss= 2.03321, val_acc= 0.79015, time= 0.30039
+[2022/4/26 12:25:29] Epoch: 9, train_loss= 1.65638, train_acc= 0.80271, val_loss= 2.03149, val_acc= 0.79562, time= 0.30033
+[2022/4/26 12:25:29] Epoch: 10, train_loss= 1.63954, train_acc= 0.80798, val_loss= 2.03001, val_acc= 0.79562, time= 0.29982
+[2022/4/26 12:25:29] Epoch: 11, train_loss= 1.62503, train_acc= 0.81851, val_loss= 2.02872, val_acc= 0.80109, time= 0.29832
+[2022/4/26 12:25:29] Epoch: 12, train_loss= 1.61257, train_acc= 0.82439, val_loss= 2.02760, val_acc= 0.80839, time= 0.29894
+[2022/4/26 12:25:30] Epoch: 13, train_loss= 1.60185, train_acc= 0.82662, val_loss= 2.02663, val_acc= 0.80839, time= 0.30227
+[2022/4/26 12:25:30] Epoch: 14, train_loss= 1.59267, train_acc= 0.82722, val_loss= 2.02582, val_acc= 0.80474, time= 0.30967
+[2022/4/26 12:25:30] Epoch: 15, train_loss= 1.58494, train_acc= 0.82743, val_loss= 2.02516, val_acc= 0.80474, time= 0.30086
+[2022/4/26 12:25:31] Epoch: 16, train_loss= 1.57861, train_acc= 0.83046, val_loss= 2.02466, val_acc= 0.80292, time= 0.30133
+[2022/4/26 12:25:31] Epoch: 17, train_loss= 1.57360, train_acc= 0.83310, val_loss= 2.02429, val_acc= 0.80474, time= 0.30138
+[2022/4/26 12:25:31] Epoch: 18, train_loss= 1.56949, train_acc= 0.83735, val_loss= 2.02399, val_acc= 0.81022, time= 0.30934
+[2022/4/26 12:25:32] Epoch: 19, train_loss= 1.56566, train_acc= 0.84363, val_loss= 2.02367, val_acc= 0.82117, time= 0.30286
+[2022/4/26 12:25:32] Epoch: 20, train_loss= 1.56126, train_acc= 0.85295, val_loss= 2.02335, val_acc= 0.82664, time= 0.30171
+[2022/4/26 12:25:32] Epoch: 21, train_loss= 1.55593, train_acc= 0.86348, val_loss= 2.02308, val_acc= 0.82847, time= 0.30801
+[2022/4/26 12:25:32] Epoch: 22, train_loss= 1.55068, train_acc= 0.87280, val_loss= 2.02292, val_acc= 0.82847, time= 0.30138
+[2022/4/26 12:25:33] Epoch: 23, train_loss= 1.54647, train_acc= 0.87584, val_loss= 2.02285, val_acc= 0.83394, time= 0.30188
+[2022/4/26 12:25:33] Epoch: 24, train_loss= 1.54352, train_acc= 0.87523, val_loss= 2.02277, val_acc= 0.83394, time= 0.30150
+[2022/4/26 12:25:33] Epoch: 25, train_loss= 1.54097, train_acc= 0.87624, val_loss= 2.02258, val_acc= 0.83577, time= 0.30185
+[2022/4/26 12:25:34] Epoch: 26, train_loss= 1.53807, train_acc= 0.87786, val_loss= 2.02231, val_acc= 0.83577, time= 0.30065
+[2022/4/26 12:25:34] Epoch: 27, train_loss= 1.53482, train_acc= 0.87989, val_loss= 2.02199, val_acc= 0.83759, time= 0.30110
+[2022/4/26 12:25:34] Epoch: 28, train_loss= 1.53149, train_acc= 0.88110, val_loss= 2.02167, val_acc= 0.83942, time= 0.30148
+[2022/4/26 12:25:35] Epoch: 29, train_loss= 1.52828, train_acc= 0.88151, val_loss= 2.02136, val_acc= 0.83942, time= 0.30215
+[2022/4/26 12:25:35] Epoch: 30, train_loss= 1.52530, train_acc= 0.88191, val_loss= 2.02109, val_acc= 0.83394, time= 0.30178
+[2022/4/26 12:25:35] Epoch: 31, train_loss= 1.52271, train_acc= 0.88252, val_loss= 2.02091, val_acc= 0.83394, time= 0.30124
+[2022/4/26 12:25:35] Epoch: 32, train_loss= 1.52060, train_acc= 0.88394, val_loss= 2.02078, val_acc= 0.83212, time= 0.30192
+[2022/4/26 12:25:36] Epoch: 33, train_loss= 1.51882, train_acc= 0.88536, val_loss= 2.02069, val_acc= 0.83759, time= 0.30123
+[2022/4/26 12:25:36] Epoch: 34, train_loss= 1.51714, train_acc= 0.88617, val_loss= 2.02060, val_acc= 0.83942, time= 0.30110
+[2022/4/26 12:25:36] Epoch: 35, train_loss= 1.51541, train_acc= 0.88718, val_loss= 2.02050, val_acc= 0.84307, time= 0.30374
+[2022/4/26 12:25:37] Epoch: 36, train_loss= 1.51367, train_acc= 0.88819, val_loss= 2.02040, val_acc= 0.84307, time= 0.30308
+[2022/4/26 12:25:37] Epoch: 37, train_loss= 1.51199, train_acc= 0.88941, val_loss= 2.02030, val_acc= 0.83759, time= 0.30254
+[2022/4/26 12:25:37] Epoch: 38, train_loss= 1.51038, train_acc= 0.89224, val_loss= 2.02017, val_acc= 0.83942, time= 0.30114
+[2022/4/26 12:25:38] Epoch: 39, train_loss= 1.50875, train_acc= 0.89427, val_loss= 2.01998, val_acc= 0.84672, time= 0.30115
+[2022/4/26 12:25:38] Epoch: 40, train_loss= 1.50688, train_acc= 0.89893, val_loss= 2.01975, val_acc= 0.86131, time= 0.30053
+[2022/4/26 12:25:38] Epoch: 41, train_loss= 1.50470, train_acc= 0.90136, val_loss= 2.01948, val_acc= 0.86314, time= 0.30116
+[2022/4/26 12:25:38] Epoch: 42, train_loss= 1.50225, train_acc= 0.90419, val_loss= 2.01926, val_acc= 0.86131, time= 0.30101
+[2022/4/26 12:25:39] Epoch: 43, train_loss= 1.50008, train_acc= 0.90642, val_loss= 2.01920, val_acc= 0.86314, time= 0.30191
+[2022/4/26 12:25:39] Epoch: 44, train_loss= 1.49912, train_acc= 0.90683, val_loss= 2.01923, val_acc= 0.86131, time= 0.30043
+[2022/4/26 12:25:39] Epoch: 45, train_loss= 1.49886, train_acc= 0.90804, val_loss= 2.01919, val_acc= 0.85766, time= 0.30322
+[2022/4/26 12:25:40] Epoch: 46, train_loss= 1.49814, train_acc= 0.90845, val_loss= 2.01905, val_acc= 0.85766, time= 0.30225
+[2022/4/26 12:25:40] Epoch: 47, train_loss= 1.49658, train_acc= 0.90865, val_loss= 2.01886, val_acc= 0.85949, time= 0.30391
+[2022/4/26 12:25:40] Epoch: 48, train_loss= 1.49463, train_acc= 0.90946, val_loss= 2.01869, val_acc= 0.86314, time= 0.30458
+[2022/4/26 12:25:41] Epoch: 49, train_loss= 1.49292, train_acc= 0.91108, val_loss= 2.01861, val_acc= 0.87044, time= 0.30166
+[2022/4/26 12:25:41] Epoch: 50, train_loss= 1.49188, train_acc= 0.91513, val_loss= 2.01859, val_acc= 0.87774, time= 0.30221
+[2022/4/26 12:25:41] Epoch: 51, train_loss= 1.49124, train_acc= 0.91756, val_loss= 2.01856, val_acc= 0.87956, time= 0.30181
+[2022/4/26 12:25:42] Epoch: 52, train_loss= 1.49059, train_acc= 0.91776, val_loss= 2.01851, val_acc= 0.87956, time= 0.30343
+[2022/4/26 12:25:42] Epoch: 53, train_loss= 1.48978, train_acc= 0.91898, val_loss= 2.01845, val_acc= 0.87956, time= 0.30363
+[2022/4/26 12:25:42] Epoch: 54, train_loss= 1.48884, train_acc= 0.91999, val_loss= 2.01838, val_acc= 0.87774, time= 0.30347
+[2022/4/26 12:25:42] Epoch: 55, train_loss= 1.48786, train_acc= 0.92060, val_loss= 2.01830, val_acc= 0.87591, time= 0.30310
+[2022/4/26 12:25:43] Epoch: 56, train_loss= 1.48692, train_acc= 0.92100, val_loss= 2.01824, val_acc= 0.87591, time= 0.30210
+[2022/4/26 12:25:43] Epoch: 57, train_loss= 1.48610, train_acc= 0.92040, val_loss= 2.01818, val_acc= 0.87591, time= 0.30345
+[2022/4/26 12:25:43] Epoch: 58, train_loss= 1.48545, train_acc= 0.91999, val_loss= 2.01815, val_acc= 0.87409, time= 0.30393
+[2022/4/26 12:25:44] Epoch: 59, train_loss= 1.48495, train_acc= 0.91938, val_loss= 2.01812, val_acc= 0.87044, time= 0.30331
+[2022/4/26 12:25:44] Epoch: 60, train_loss= 1.48452, train_acc= 0.91878, val_loss= 2.01808, val_acc= 0.87044, time= 0.30326
+[2022/4/26 12:25:44] Epoch: 61, train_loss= 1.48405, train_acc= 0.91938, val_loss= 2.01804, val_acc= 0.87044, time= 0.30289
+[2022/4/26 12:25:45] Epoch: 62, train_loss= 1.48351, train_acc= 0.92019, val_loss= 2.01801, val_acc= 0.87591, time= 0.30289
+[2022/4/26 12:25:45] Epoch: 63, train_loss= 1.48295, train_acc= 0.92222, val_loss= 2.01798, val_acc= 0.87774, time= 0.30092
+[2022/4/26 12:25:45] Epoch: 64, train_loss= 1.48246, train_acc= 0.92303, val_loss= 2.01796, val_acc= 0.88139, time= 0.30158
+[2022/4/26 12:25:45] Epoch: 65, train_loss= 1.48203, train_acc= 0.92344, val_loss= 2.01794, val_acc= 0.88139, time= 0.30257
+[2022/4/26 12:25:46] Epoch: 66, train_loss= 1.48165, train_acc= 0.92445, val_loss= 2.01793, val_acc= 0.88139, time= 0.30360
+[2022/4/26 12:25:46] Epoch: 67, train_loss= 1.48129, train_acc= 0.92506, val_loss= 2.01792, val_acc= 0.88139, time= 0.30306
+[2022/4/26 12:25:46] Epoch: 68, train_loss= 1.48093, train_acc= 0.92566, val_loss= 2.01790, val_acc= 0.88139, time= 0.30222
+[2022/4/26 12:25:47] Epoch: 69, train_loss= 1.48059, train_acc= 0.92688, val_loss= 2.01788, val_acc= 0.88321, time= 0.30309
+[2022/4/26 12:25:47] Epoch: 70, train_loss= 1.48027, train_acc= 0.92749, val_loss= 2.01786, val_acc= 0.88321, time= 0.30366
+[2022/4/26 12:25:47] Epoch: 71, train_loss= 1.47996, train_acc= 0.92789, val_loss= 2.01784, val_acc= 0.88321, time= 0.30300
+[2022/4/26 12:25:48] Epoch: 72, train_loss= 1.47966, train_acc= 0.92870, val_loss= 2.01782, val_acc= 0.88321, time= 0.30274
+[2022/4/26 12:25:48] Epoch: 73, train_loss= 1.47937, train_acc= 0.92911, val_loss= 2.01779, val_acc= 0.88321, time= 0.30320
+[2022/4/26 12:25:48] Epoch: 74, train_loss= 1.47908, train_acc= 0.92931, val_loss= 2.01777, val_acc= 0.88686, time= 0.30291
+[2022/4/26 12:25:48] Epoch: 75, train_loss= 1.47880, train_acc= 0.92951, val_loss= 2.01775, val_acc= 0.88686, time= 0.30374
+[2022/4/26 12:25:49] Epoch: 76, train_loss= 1.47854, train_acc= 0.93032, val_loss= 2.01774, val_acc= 0.88686, time= 0.30348
+[2022/4/26 12:25:49] Epoch: 77, train_loss= 1.47829, train_acc= 0.93073, val_loss= 2.01773, val_acc= 0.88504, time= 0.30254
+[2022/4/26 12:25:49] Epoch: 78, train_loss= 1.47805, train_acc= 0.93073, val_loss= 2.01773, val_acc= 0.88504, time= 0.30206
+[2022/4/26 12:25:50] Epoch: 79, train_loss= 1.47783, train_acc= 0.93073, val_loss= 2.01773, val_acc= 0.88504, time= 0.30191
+[2022/4/26 12:25:50] Epoch: 80, train_loss= 1.47762, train_acc= 0.93073, val_loss= 2.01773, val_acc= 0.88321, time= 0.30354
+[2022/4/26 12:25:50] Epoch: 81, train_loss= 1.47741, train_acc= 0.93073, val_loss= 2.01772, val_acc= 0.88504, time= 0.30219
+[2022/4/26 12:25:51] Epoch: 82, train_loss= 1.47722, train_acc= 0.93113, val_loss= 2.01772, val_acc= 0.88686, time= 0.30365
+[2022/4/26 12:25:51] Epoch: 83, train_loss= 1.47702, train_acc= 0.93113, val_loss= 2.01771, val_acc= 0.88686, time= 0.30368
+[2022/4/26 12:25:51] Epoch: 84, train_loss= 1.47682, train_acc= 0.93194, val_loss= 2.01770, val_acc= 0.88686, time= 0.30355
+[2022/4/26 12:25:52] Epoch: 85, train_loss= 1.47663, train_acc= 0.93235, val_loss= 2.01769, val_acc= 0.88869, time= 0.30415
+[2022/4/26 12:25:52] Epoch: 86, train_loss= 1.47645, train_acc= 0.93316, val_loss= 2.01768, val_acc= 0.88869, time= 0.30321
+[2022/4/26 12:25:52] Epoch: 87, train_loss= 1.47628, train_acc= 0.93316, val_loss= 2.01767, val_acc= 0.88869, time= 0.30524
+[2022/4/26 12:25:52] Epoch: 88, train_loss= 1.47612, train_acc= 0.93356, val_loss= 2.01766, val_acc= 0.88869, time= 0.30612
+[2022/4/26 12:25:53] Epoch: 89, train_loss= 1.47597, train_acc= 0.93377, val_loss= 2.01765, val_acc= 0.88869, time= 0.30466
+[2022/4/26 12:25:53] Epoch: 90, train_loss= 1.47582, train_acc= 0.93417, val_loss= 2.01765, val_acc= 0.88869, time= 0.30444
+[2022/4/26 12:25:53] Epoch: 91, train_loss= 1.47567, train_acc= 0.93458, val_loss= 2.01764, val_acc= 0.88869, time= 0.30490
+[2022/4/26 12:25:54] Epoch: 92, train_loss= 1.47553, train_acc= 0.93458, val_loss= 2.01764, val_acc= 0.88869, time= 0.30438
+[2022/4/26 12:25:54] Epoch: 93, train_loss= 1.47539, train_acc= 0.93498, val_loss= 2.01764, val_acc= 0.88869, time= 0.30434
+[2022/4/26 12:25:54] Epoch: 94, train_loss= 1.47525, train_acc= 0.93518, val_loss= 2.01764, val_acc= 0.88869, time= 0.30619
+[2022/4/26 12:25:55] Epoch: 95, train_loss= 1.47512, train_acc= 0.93518, val_loss= 2.01764, val_acc= 0.88869, time= 0.30345
+[2022/4/26 12:25:55] Epoch: 96, train_loss= 1.47500, train_acc= 0.93478, val_loss= 2.01764, val_acc= 0.88869, time= 0.30402
+[2022/4/26 12:25:55] Epoch: 97, train_loss= 1.47487, train_acc= 0.93478, val_loss= 2.01763, val_acc= 0.88869, time= 0.30501
+[2022/4/26 12:25:55] Epoch: 98, train_loss= 1.47475, train_acc= 0.93498, val_loss= 2.01763, val_acc= 0.88869, time= 0.30378
+[2022/4/26 12:25:56] Epoch: 99, train_loss= 1.47464, train_acc= 0.93518, val_loss= 2.01763, val_acc= 0.88869, time= 0.30423
+[2022/4/26 12:25:56] Epoch: 100, train_loss= 1.47452, train_acc= 0.93518, val_loss= 2.01762, val_acc= 0.88869, time= 0.30380
+[2022/4/26 12:25:56] Optimization Finished!
+[2022/4/26 12:25:56] Test set results: 
+[2022/4/26 12:25:56] 	 loss= 1.82038, accuracy= 0.91960, time= 0.10540
+[2022/4/26 12:25:56] Test Precision, Recall and F1-Score...
+[2022/4/26 12:25:56]               precision    recall  f1-score   support
+[2022/4/26 12:25:56] 
+[2022/4/26 12:25:56]            0     0.3820    0.4198    0.4000        81
+[2022/4/26 12:25:56]            1     0.7143    0.8333    0.7692        36
+[2022/4/26 12:25:56]            2     0.7959    0.9669    0.8731       121
+[2022/4/26 12:25:56]            3     0.9754    0.9684    0.9719       696
+[2022/4/26 12:25:56]            4     0.7000    0.9655    0.8116        87
+[2022/4/26 12:25:56]            5     0.0000    0.0000    0.0000        10
+[2022/4/26 12:25:56]            6     0.9764    0.9917    0.9840      1083
+[2022/4/26 12:25:56]            7     0.0000    0.0000    0.0000        75
+[2022/4/26 12:25:56] 
+[2022/4/26 12:25:56]     accuracy                         0.9196      2189
+[2022/4/26 12:25:56]    macro avg     0.5680    0.6432    0.6012      2189
+[2022/4/26 12:25:56] weighted avg     0.8909    0.9196    0.9038      2189
+[2022/4/26 12:25:56] 
+[2022/4/26 12:25:56] Macro average Test Precision, Recall and F1-Score...
+[2022/4/26 12:25:56] (0.5679985204821496, 0.6432032956478686, 0.6012260096931692, None)
+[2022/4/26 12:25:56] Micro average Test Precision, Recall and F1-Score...
+[2022/4/26 12:25:56] (0.9195979899497487, 0.9195979899497487, 0.9195979899497487, None)
+[2022/4/26 12:25:56] Embeddings:
+[2022/4/26 12:25:56] Word_embeddings:7688
+[2022/4/26 12:25:56] Train_doc_embeddings:5485
+[2022/4/26 12:25:56] Test_doc_embeddings:2189
+[2022/4/26 12:25:56] Word_embeddings:
+[[0.15439649 0.30586052 0.49168268 ... 0.         0.16390255 0.21498835]
+ [0.         0.         0.33890912 ... 0.18244964 0.0284628  0.01926191]
+ [0.25307977 0.54551554 0.40443507 ... 0.         0.34475574 0.3726009 ]
+ ...
+ [0.07865764 0.2893352  0.19428724 ... 0.03147483 0.23365325 0.        ]
+ [0.         0.24161495 0.15693152 ... 0.1045371  0.         0.0980995 ]
+ [0.13632365 0.25130913 0.02984186 ... 0.04394479 0.18480933 0.01182236]]
+Traceback (most recent call last):
+  File "/home2/prateekj/GNN-for-text-classification/main.py", line 370, in <module>
+    word_vector = word_embeddings[i]
+IndexError: index 7688 is out of bounds for axis 0 with size 7688
