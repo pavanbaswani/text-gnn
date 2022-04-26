@@ -26,7 +26,7 @@ negative reviews.
 | Ohsumed 	| 7,400 	| 3,357 	| 4,043 	| 14,157 	| 21,557 	| 23 	| 135.82 	|
 | MR 	| 10,662 	| 7,108 	| 3,554 	| 18,764 	| 29,426 	| 2 	| 20.39 	|
 
-#Accuracy for SAGE and GAT
+# Accuracy for SAGE and GAT
 | Datasets | GraphSAGE Accuracy | GAT Accuracy |
 |----------|--------------------|--------------|
 | 20NG     | 79.14              | 46.14        |
