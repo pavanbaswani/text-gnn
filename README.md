@@ -29,7 +29,7 @@ negative reviews.
 # Accuracy for SAGE and GAT
 | Datasets | GraphSAGE Accuracy | GAT Accuracy | GraphSAGE F1 score | GAT F1 score |
 |----------|--------------------|--------------|--------------------|--------------|
-| 20NG     | 79.14              | 46.14        | 7914               | 46.41        |
+| 20NG     | 79.14              | 46.42        | 7914               | 46.41        |
 | R8       | 95.20              | 91.96        | 95.20              | 91.95        |
 | R52      | 97.54              | 91.74        | 97.54              | 91.74        |
 | Ohsumed  | 98.56              | 89.71        | 98.56              | 89.71        |
