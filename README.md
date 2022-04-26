@@ -26,4 +26,13 @@ negative reviews.
 | Ohsumed 	| 7,400 	| 3,357 	| 4,043 	| 14,157 	| 21,557 	| 23 	| 135.82 	|
 | MR 	| 10,662 	| 7,108 	| 3,554 	| 18,764 	| 29,426 	| 2 	| 20.39 	|
 
+#Accuracy for SAGE and GAT
+| Datasets | GraphSAGE Accuracy | GAT Accuracy |
+|----------|--------------------|--------------|
+| 20NG     | 79.14              | 46.14        |
+| R8       | 95.20              | 91.96        |
+| R52      | 97.54              | 91.74        |
+| Ohsumed  | 98.56              | 89.71        |
+| MR       | 76.45              | 76.25        |
+
 Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
