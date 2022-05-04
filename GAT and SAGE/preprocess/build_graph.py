@@ -9,17 +9,20 @@ from sklearn import svm
 from nltk.corpus import wordnet as wn
 from sklearn.feature_extraction.text import TfidfVectorizer
 from scipy.spatial.distance import cosine
+from tqdm import tqdm
 
 import sys
 sys.path.append('../')
-from utils.utils import loadWord2Vec, clean_str
+from utils.utils import loadWord2Vec, clean_str, clean_str_indic
 
 
 
 if len(sys.argv) != 2:
 	sys.exit("Use: python build_graph.py <dataset>")
 
-datasets = ['20ng', 'R8', 'R52', 'ohsumed', 'mr']
+datasets = ['20ng', 'R8', 'R52', 'ohsumed', 'mr', 'hin', 'tel', 'bn', 'gu', 'kn', 'ml', 'ta','mar']
+indic = ['hin', 'tel', 'bn', 'gu', 'kn', 'ml', 'mar', 'ta']
+
 # build corpus
 dataset = sys.argv[1]
 
@@ -40,9 +43,10 @@ doc_name_list = []
 doc_train_list = []
 doc_test_list = []
 
+print("Reading the metadata of ", dataset, " language")
 with open('../data/' + dataset + '.txt', 'r') as f:
     lines = f.readlines()
-    for line in lines:
+    for line in tqdm(lines):
         doc_name_list.append(line.strip())
         temp = line.split("\t")
         if temp[1].find('test') != -1:
@@ -52,15 +56,17 @@ with open('../data/' + dataset + '.txt', 'r') as f:
 # print(doc_train_list)
 # print(doc_test_list)
 
+print("Reading the cleaned data of ", dataset, " language")
 doc_content_list = []
 with open('../data/corpus/' + dataset + '.clean.txt', 'r') as f:
     lines = f.readlines();
-    for line in lines:
+    for line in tqdm(lines):
         doc_content_list.append(line.strip())
 # print(doc_content_list)
 
+print("Generating train ids")
 train_ids = []
-for train_name in doc_train_list:
+for train_name in tqdm(doc_train_list):
     train_id = doc_name_list.index(train_name)
     train_ids.append(train_id)
 print(train_ids)
@@ -69,18 +75,21 @@ random.shuffle(train_ids)
 # partial labeled data
 #train_ids = train_ids[:int(0.2 * len(train_ids))]
 
+print("Writing ids to ", dataset, ".train.index")
 train_ids_str = '\n'.join(str(index) for index in train_ids)
 with open('../data/' + dataset + '.train.index', 'w') as f:
     f.write(train_ids_str)
 
 
+print("Generating test ids")
 test_ids = []
-for test_name in doc_test_list:
+for test_name in tqdm(doc_test_list):
     test_id = doc_name_list.index(test_name)
     test_ids.append(test_id)
 print(test_ids)
 random.shuffle(test_ids)
 
+print("Writing ids to ", dataset, ".test.index")
 test_ids_str = '\n'.join(str(index) for index in test_ids)
 with open('../data/' + dataset + '.test.index', 'w') as f:
     f.write(test_ids_str)
@@ -90,6 +99,7 @@ ids = train_ids + test_ids
 print(ids)
 print(len(ids))
 
+print("Generating shuffle of train and test ids")
 shuffle_doc_name_list = []
 shuffle_doc_words_list = []
 for id in ids:
@@ -98,17 +108,20 @@ for id in ids:
 shuffle_doc_name_str = '\n'.join(shuffle_doc_name_list)
 shuffle_doc_words_str = '\n'.join(shuffle_doc_words_list)
 
+print("Writing shuffled id")
 with open('../data/' + dataset + '_shuffle.txt', 'w') as f:
     f.write(shuffle_doc_name_str)
 
+print("Writing shuffled data")
 with open('../data/corpus/' + dataset + '_shuffle.txt', 'w') as f:
     f.write(shuffle_doc_words_str)
 
 
+print("Building vocab")
 # build vocab
 word_freq = {}
 word_set = set()
-for doc_words in shuffle_doc_words_list:
+for doc_words in tqdm(shuffle_doc_words_list):
     words = doc_words.split()
     for word in words:
         word_set.add(word)
@@ -119,10 +132,12 @@ for doc_words in shuffle_doc_words_list:
 
 vocab = list(word_set)
 vocab_size = len(vocab)
+print("Vocab size: ", vocab_size)
 
+print("Generating word_doc list")
 word_doc_list = {}
 
-for i in range(len(shuffle_doc_words_list)):
+for i in tqdm(range(len(shuffle_doc_words_list))):
     doc_words = shuffle_doc_words_list[i]
     words = doc_words.split()
     appeared = set()
@@ -137,16 +152,19 @@ for i in range(len(shuffle_doc_words_list)):
             word_doc_list[word] = [i]
         appeared.add(word)
 
+print("Generating word-doc frequency dictionary")        
 word_doc_freq = {}
 for word, doc_list in word_doc_list.items():
     word_doc_freq[word] = len(doc_list)
 
+print("Generating word2idx")
 word_id_map = {}
 for i in range(vocab_size):
     word_id_map[vocab[i]] = i
 
 vocab_str = '\n'.join(vocab)
 
+print("Writing vocab to the file")
 with open('../data/corpus/' + dataset + '_vocab.txt', 'w') as f:
     f.write(vocab_str)
 
@@ -208,13 +226,15 @@ word_embeddings_dim = len(embd[0])
 Word definitions end
 '''
 
+print("Extracting labels list from metadata")
 # label list
 label_set = set()
-for doc_meta in shuffle_doc_name_list:
+for doc_meta in tqdm(shuffle_doc_name_list):
     temp = doc_meta.split('\t')
     label_set.add(temp[2])
 label_list = list(label_set)
 
+print("Writing labels to the file")
 label_list_str = '\n'.join(label_list)
 with open('../data/corpus/' + dataset + '_labels.txt', 'w') as f:
     f.write(label_list_str)
@@ -223,7 +243,7 @@ with open('../data/corpus/' + dataset + '_labels.txt', 'w') as f:
 # x: feature vectors of training docs, no initial features
 # slect 90% training set
 train_size = len(train_ids)
-val_size = int(0.1 * train_size)
+val_size = int(0.05 * train_size)
 real_train_size = train_size - val_size  # - int(0.5 * train_size)
 # different training rates
 
@@ -233,11 +253,11 @@ real_train_doc_names_str = '\n'.join(real_train_doc_names)
 with open('../data/' + dataset + '.real_train.name', 'w') as f:
     f.write(real_train_doc_names_str)
 
-
+print("Generating the co-occurance matrix for train set")
 row_x = []
 col_x = []
 data_x = []
-for i in range(real_train_size):
+for i in tqdm(range(real_train_size)):
     doc_vec = np.array([0.0 for k in range(word_embeddings_dim)])
     doc_words = shuffle_doc_words_list[i]
     words = doc_words.split()
@@ -255,12 +275,14 @@ for i in range(real_train_size):
         # np.random.uniform(-0.25, 0.25)
         data_x.append(doc_vec[j] / doc_len)  # doc_vec[j]/ doc_len
 
+print("Generating csr_matrix")        
 # x = sp.csr_matrix((real_train_size, word_embeddings_dim), dtype=np.float32)
 x = sp.csr_matrix((data_x, (row_x, col_x)), shape=(
     real_train_size, word_embeddings_dim))
 
+print("Training labels from metadata")
 y = []
-for i in range(real_train_size):
+for i in tqdm(range(real_train_size)):
     doc_meta = shuffle_doc_name_list[i]
     temp = doc_meta.split('\t')
     label = temp[2]
@@ -274,10 +296,11 @@ print(y)
 # tx: feature vectors of test docs, no initial features
 test_size = len(test_ids)
 
+print("Generating co-occurance matrix for test set")
 row_tx = []
 col_tx = []
 data_tx = []
-for i in range(test_size):
+for i in tqdm(range(test_size)):
     doc_vec = np.array([0.0 for k in range(word_embeddings_dim)])
     doc_words = shuffle_doc_words_list[i + train_size]
     words = doc_words.split()
@@ -293,12 +316,14 @@ for i in range(test_size):
         # np.random.uniform(-0.25, 0.25)
         data_tx.append(doc_vec[j] / doc_len)  # doc_vec[j] / doc_len
 
+print("Generating csr_matrix")
 # tx = sp.csr_matrix((test_size, word_embeddings_dim), dtype=np.float32)
 tx = sp.csr_matrix((data_tx, (row_tx, col_tx)),
                    shape=(test_size, word_embeddings_dim))
 
+print("Testing labels from metadata")
 ty = []
-for i in range(test_size):
+for i in tqdm(range(test_size)):
     doc_meta = shuffle_doc_name_list[i + train_size]
     temp = doc_meta.split('\t')
     label = temp[2]
@@ -313,10 +338,11 @@ print(ty)
 # (a superset of x)
 # unlabeled training instances -> words
 
+print("Generating word-vectors")
 word_vectors = np.random.uniform(-0.01, 0.01,
                                  (vocab_size, word_embeddings_dim))
 
-for i in range(len(vocab)):
+for i in tqdm(range(len(vocab))):
     word = vocab[i]
     if word in word_vector_map:
         vector = word_vector_map[word]
@@ -325,8 +351,8 @@ for i in range(len(vocab)):
 row_allx = []
 col_allx = []
 data_allx = []
-
-for i in range(train_size):
+print("All co-occurance matrix")
+for i in tqdm(range(train_size)):
     doc_vec = np.array([0.0 for k in range(word_embeddings_dim)])
     doc_words = shuffle_doc_words_list[i]
     words = doc_words.split()
@@ -355,8 +381,9 @@ data_allx = np.array(data_allx)
 allx = sp.csr_matrix(
     (data_allx, (row_allx, col_allx)), shape=(train_size + vocab_size, word_embeddings_dim))
 
+print("All labels from train")
 ally = []
-for i in range(train_size):
+for i in tqdm(range(train_size)):
     doc_meta = shuffle_doc_name_list[i]
     temp = doc_meta.split('\t')
     label = temp[2]
@@ -365,7 +392,8 @@ for i in range(train_size):
     one_hot[label_index] = 1
     ally.append(one_hot)
 
-for i in range(vocab_size):
+print("Onehot representation for labels")
+for i in tqdm(range(vocab_size)):
     one_hot = [0 for l in range(len(label_list))]
     ally.append(one_hot)
 
@@ -377,11 +405,12 @@ print(x.shape, y.shape, tx.shape, ty.shape, allx.shape, ally.shape)
 Doc word heterogeneous graph
 '''
 
+print("Doc word hetrogeneous graph")
 # word co-occurence with context windows
-window_size = 20
+window_size = 10
 windows = []
 
-for doc_words in shuffle_doc_words_list:
+for doc_words in tqdm(shuffle_doc_words_list):
     words = doc_words.split()
     length = len(words)
     if length <= window_size:
@@ -394,8 +423,9 @@ for doc_words in shuffle_doc_words_list:
             # print(window)
 
 
+print("Word window frequency")
 word_window_freq = {}
-for window in windows:
+for window in tqdm(windows):
     appeared = set()
     for i in range(len(window)):
         if window[i] in appeared:
@@ -406,8 +436,9 @@ for window in windows:
             word_window_freq[window[i]] = 1
         appeared.add(window[i])
 
+print("Word-pair count")
 word_pair_count = {}
-for window in windows:
+for window in tqdm(windows):
     for i in range(1, len(window)):
         for j in range(0, i):
             word_i = window[i]
@@ -433,7 +464,7 @@ col = []
 weight = []
 
 # pmi as weights
-
+print("PMI as weight")
 num_window = len(windows)
 
 for key in word_pair_count:
@@ -469,7 +500,8 @@ for i in range(vocab_size):
 # doc word frequency
 doc_word_freq = {}
 
-for doc_id in range(len(shuffle_doc_words_list)):
+print("Doc-word Frequency")
+for doc_id in tqdm(range(len(shuffle_doc_words_list))):
     doc_words = shuffle_doc_words_list[doc_id]
     words = doc_words.split()
     for word in words:
@@ -480,7 +512,8 @@ for doc_id in range(len(shuffle_doc_words_list)):
         else:
             doc_word_freq[doc_word_str] = 1
 
-for i in range(len(shuffle_doc_words_list)):
+print("Generating the weights")
+for i in tqdm(range(len(shuffle_doc_words_list))):
     doc_words = shuffle_doc_words_list[i]
     words = doc_words.split()
     doc_word_set = set()
@@ -504,6 +537,7 @@ node_size = train_size + vocab_size + test_size
 adj = sp.csr_matrix(
     (weight, (row, col)), shape=(node_size, node_size))
 
+print("Dumping weights")
 # dump objects
 with open("../data/ind.{}.x".format(dataset), 'wb') as f:
     pkl.dump(x, f)
@@ -526,6 +560,7 @@ with open("../data/ind.{}.ally".format(dataset), 'wb') as f:
 with open("../data/ind.{}.adj".format(dataset), 'wb') as f:
     pkl.dump(adj, f)
 
+print("Done")
 
 
 
