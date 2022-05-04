@@ -41,11 +41,9 @@ negative reviews.
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tsne_plots.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
  
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/bn_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
-</div>
-</br>
-
-<div align="center">    
+ 
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center /> 
+ 
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/mar_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
 </div>
 </br>
@@ -54,10 +52,7 @@ negative reviews.
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ml_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
   
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ta_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
-</div>
-</br>
-
-<div align="center">    
+ 
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
    
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
