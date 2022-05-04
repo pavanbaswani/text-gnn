@@ -10,37 +10,140 @@ Embeddings for nodes present in a graph are useful for almost all kind of applic
 # GAT 
 As attention mechanism has become powerful tool in almost all the sequence based task Dealing with variable sized inputs, focusing on the most relevant parts of the input to make decisions are some benefits of using attention mechanism. When an attention mechanism is used to compute a representation of a single sequence is known as self-attention. Graph Model Based on Attention Mechanism for Text Classification is also proved helpful as we are getting better accuracy than the LSTM and RNN.
 
+# How to RUN
+1. Download the data files for the required model (NLP or GNN). Extract and place it in the data folder.
+2. For NLP models replace the train, dev, test csv paths with appropriate language file paths. Whereas the GNN models don't required to specify any path.
+3. Create a new virtual environment
+
+using conda:
+```
+>>> conda create -n <env-name>
+```
+using pip
+```
+>>> python -m pip install --user virtualenv
+```
+4. Install the required packages using the requirements.txt file with the following command
+```
+>>> pip install -r requirements.txt
+```
+5. To run the NLP models, use the jupyter notebook and description added for your reference.
+6. To run the GNN models, make sure you have the cuda enabled and run the below commands for any language.
+
+Run the remove_words.py to preprocess the data and remove the stopwords and less frequent words (<5)
+
+**List of dataset-names:** ('20ng', 'R8', 'R52', 'ohsumed', 'mr', 'hin', 'tel', 'bn', 'gu', 'kn', 'ml', 'ta','mar')
+```
+>>> python remove_words.py <dataset-name>
+```
+Run the build_graph.py to prepare the graph using the entire corpus.
+```
+>>> python build_graph.py <dataset-name>
+```
+Run the run.py to run the experiments.
+
+**List of model-names:** ("GCN", "SAGE", "GAT")
+```
+>>> python run.py --model <model-name> --cuda True --dataset <dataset-name>
+```
+To visualize the TSNE plot for the model results use the following command (before that change the dataset name in tsne.py file)
+
+```
+>>> python tsne.py
+```
+
 # Dataset
-The dataset can be downloaded from this link: https://github.com/yao8839836/text_gcn/tree/master/data
+**NLP Models data donwload link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EhHbL4vdAXpPnpO7RdIx410BuyMr8exZK7uGFlsrE6iJEg?e=dTLoxb
+
+**GNN Models data download link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/Eq5FZEVwNRFDlNhQ0cxXEDkBPpl2hUDfkQj10eRxH6K5IQ?e=S5oGqO
+
+The english raw dataset can be downloaded from this link: https://github.com/yao8839836/text_gcn/tree/master/data
 1. The 20NG dataset contains 18,846 documents evenly categorized into 20 different categories.
 2. The Ohsumed corpus is from the MEDLINE database, contains 23 disease categories.
 3. R52 and R8 are two subsets of the Reuters 21578 dataset and contains 52, 8 categories respectively.
 4. MR is a movie review dataset f or binary sentiment classification. It contains 5,331 positive and 5,331
 negative reviews.
 
-| Dataset 	| #Docs 	| #Training 	| #Test 	| #Words 	| #Nodes 	| #Classes 	| Avg Length 	|
-|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|
-| 20NG 	| 18,846 	| 11,314 	| 7,532 	| 42,757 	| 61,603 	| 20 	| 221.26 	|
-| R8 	| 7,674 	| 5,485 	| 2,189 	| 7,688 	| 15,362 	| 8 	| 65.72 	|
-| R52 	| 9,100 	| 6,532 	| 2,568 	| 8,892 	| 17,992 	| 52 	| 69.82 	|
-| Ohsumed 	| 7,400 	| 3,357 	| 4,043 	| 14,157 	| 21,557 	| 23 	| 135.82 	|
-| MR 	| 10,662 	| 7,108 	| 3,554 	| 18,764 	| 29,426 	| 2 	| 20.39 	|
+## Multilingual-Indic Dataset
+To train the LSTM based Neural Language model, we used the scraped news articles from various news websites for corresponding languages tabulated below. Some of these websites have the pagination which requires the button click to navigate to the next page. To achieve this, we have used the Selenium (https://www.selenium.dev/) library. Using BeautifulSoup (https://beautiful-soup-4.readthedocs.io/en/latest/) python library. Initially, all the URLs of the news articles are extracted and used as the input to the content crawler (which scrap the html content from the given URL with required delay mentioned in website metadata.). This content crawler, uses the requests and BeautifulSoup libraries to extract the HTML content of the articles and save them in the local drive.
 
-# Accuracy for SAGE and GAT
-| Datasets | GraphSAGE Accuracy | GAT Accuracy | GraphSAGE F1 score | GAT F1 score |
-|----------|--------------------|--------------|--------------------|--------------|
-| 20NG     | 79.14              | 46.42        | 79.14              | 46.41        |
-| R8       | 95.20              | 91.96        | 95.20              | 91.95        |
-| R52      | 97.54              | 91.74        | 97.54              | 91.74        |
-| Ohsumed  | 98.56              | 89.71        | 98.56              | 89.71        |
-| MR       | 76.45              | 76.25        | 76.44              | 76.25        |
+| SNo 	| Language 	| Website 	|
+|---	|---	|---	|
+| 1 	| Telugu (te) 	| https://www.vaartha.com/ 	|
+| 2 	| Hindi (hi) 	| https://www.indiatv.in/ 	|
+| 3 	| Tamil (ta) 	| https://www.updatenews360.com/ 	|
+| 4 	| Kannada (kn) 	| https://kannadanews.com/ 	|
+| 5 	| Malayalam (ml) 	| https://dailyindianherald.com/ 	|
+| 6 	| Bengali (bn) 	| https://www.abplive.com/ 	|
+| 7 	| Gujarathi (gu) 	| https://www.gujaratsamachar.com/ 	|
+| 8 	| Marathi (mr) 	| https://www.abplive.com/ 	|
+
+
+Here, the required details about each dataset presented in the below table. For GCN, GAT and SAGE models, we have used the limited data for some languages (25% of hindi, 38% of telugu, 44% of kannada and 41% of gujarathi). Remaining are trained on entire corpus for each language.
+
+
+| **Datasets** 	| **Docs** 	| **Training** 	| **Test** 	| **Words** 	| **Nodes** 	| **Classes** 	| **Average length** 	|
+|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|
+| 20NG 	| 18846 	| 11314 	| 7532 	| 42757 	| 61603 	| 20 	| 221.26 	|
+| R8 	| 7674 	| 5485 	| 2189 	| 7688 	| 15362 	| 8 	| 65.72 	|
+| R52 	| 9100 	| 6532 	| 2568 	| 8892 	| 17992 	| 52 	| 69.82 	|
+| Ohsumed 	| 7400 	| 3357 	| 4043 	| 14157 	| 21557 	| 23 	| 135.82 	|
+| MR 	| 10662 	| 7108 	| 3554 	| 18764 	| 29426 	| 2 	| 20.39 	|
+| Hindi 	| 38121 	| 36214 	| 1907 	| 17383 	| 42661 	| 5 	| 471.18 	|
+| Marathi 	| 15884 	| 15099 	| 785 	| 26125 	| 23306 	| 7 	| 742.10 	|
+| Bengali 	| 20541 	| 19500 	| 1041 	| 43725 	| 30876 	| 8 	| 561.05 	|
+| Telugu 	| 38526 	| 36599 	| 1927 	| 20674 	| 43231 	| 9 	| 310.98 	|
+| Tamil 	| 35591 	| 33811 	| 1780 	| 34694 	| 42461 	| 12 	| 543.46 	|
+| Malayalam 	| 38104 	| 36201 	| 1903 	| 31793 	| 45975 	| 5 	| 708.96 	|
+| Kannada 	| 36647 	| 34814 	| 1833 	| 35006 	| 44660 	| 9 	| 469.17 	|
+| Gujarathi 	| 36922 	| 35079 	| 1843 	| 50028 	| 47871 	| 11 	| 545.40 	|
+
+
+# Experimental Results [F1 Measure (weighted avg)]
+**NLP Models and results download link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EmLpO8LUr-dHhEjQEmhcUQ4Bel2hVoCDyn_cIJA3yDtAJA?e=m0DwO1
+
+| **Dataset** | **LSTM** | **Bi-LSTM** |  **GCN**  |   **GAT**  | **SAGE** | **BERT** |
+|-------------|:--------:|:-----------:|:---------:|:----------:|:--------:|:--------:|
+| 20ng        |   0.62   |     0.74    |  **0.85** |    0.42    |   0.74   |   0.16   |
+| oshumed     |     -    |     0.44    |    0.68   |    0.87    | **0.97** |   0.21   |
+| R8          |   0.89   |     0.95    |  **0.96** |    0.90    |   0.94   |   0.93   |
+| R52         |     -    |      -      |    0.93   |    0.87    | **0.96** |     -    |
+| MR          |   0.72   |     0.72    |  **0.77** |    0.76    |   0.76   |   0.62   |
+| Hindi       |   0.92   |     0.94    |  **0.89** |  **0.84**  |   0.54   | **0.94** |
+| Telugu      |   0.85   |   **0.86**  |    0.63   |    0.73    |   0.69   |   0.54   |
+| Kannada     | **0.85** |     0.84    |    0.78   |    0.76    | **0.78** |   0.76   |
+| Bengali     |   0.53   |     0.54    |    0.68   |    0.73    |   0.67   | **0.76** |
+| Marathi     |   0.53   |     0.42    | **0.699** |    0.695   |   0.68   |   0.68   |
+| Tamil       |   0.85   |   **0.86**  |    0.81   |    0.68    |   0.43   |   0.82   |
+| Malyalam    |   0.61   |     0.62    |     -     | **0.6269** |     -    |   0.62   |
+| Gujrathi    |   0.92   |     0.92    |     -     |      -     |     -    | **0.93** |
 
 # Visualization
 
 <div align="center">    
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/tsne_plots.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tsne_plots.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
+ 
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/bn_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
+ 
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center /> 
+ 
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/mar_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
+</div>
+</br>
+
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ml_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
+  
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ta_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
+ 
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
 </div>
 
-Plot showing Movie Review dataset classification.
+# Contributors
+1. Pavan Baswani - 2021701035
+2. Prateek Jaiswal - 2021701009
+3. Madan Nandiwada Santhanam- 2018900075
 
-Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
+# References
+Graph Convolutional Networks for Text Classification - (https://arxiv.org/abs/1809.05679)
+The baseline code taken from the git repo (https://github.com/yao8839836/text_gcn) mentioned in the reference paper
