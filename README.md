@@ -11,10 +11,11 @@ Embeddings for nodes present in a graph are useful for almost all kind of applic
 As attention mechanism has become powerful tool in almost all the sequence based task Dealing with variable sized inputs, focusing on the most relevant parts of the input to make decisions are some benefits of using attention mechanism. When an attention mechanism is used to compute a representation of a single sequence is known as self-attention. Graph Model Based on Attention Mechanism for Text Classification is also proved helpful as we are getting better accuracy than the LSTM and RNN.
 
 # Dataset
-NLP Models data donwload link: https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EhHbL4vdAXpPnpO7RdIx410BuyMr8exZK7uGFlsrE6iJEg?e=dTLoxb
-GNN Models data download link: https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/Eq5FZEVwNRFDlNhQ0cxXEDkBPpl2hUDfkQj10eRxH6K5IQ?e=S5oGqO
+**NLP Models data donwload link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EhHbL4vdAXpPnpO7RdIx410BuyMr8exZK7uGFlsrE6iJEg?e=dTLoxb
 
-The english dataset can be downloaded from this link: https://github.com/yao8839836/text_gcn/tree/master/data
+**GNN Models data download link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/Eq5FZEVwNRFDlNhQ0cxXEDkBPpl2hUDfkQj10eRxH6K5IQ?e=S5oGqO
+
+The english raw dataset can be downloaded from this link: https://github.com/yao8839836/text_gcn/tree/master/data
 1. The 20NG dataset contains 18,846 documents evenly categorized into 20 different categories.
 2. The Ohsumed corpus is from the MEDLINE database, contains 23 disease categories.
 3. R52 and R8 are two subsets of the Reuters 21578 dataset and contains 52, 8 categories respectively.
@@ -35,7 +36,9 @@ To train the LSTM based Neural Language model, we used the scraped news articles
 | 7 	| Gujarathi (gu) 	| https://www.gujaratsamachar.com/ 	|
 | 8 	| Marathi (mr) 	| https://www.abplive.com/ 	|
 
-Here, the dataset details were tabulated below.
+
+Here, the required details about each dataset presented in the below table. For GCN, GAT and SAGE models, we have used the limited data for some languages (25% of hindi, 38% of telugu, 44% of kannada and 41% of gujarathi). Remaining are trained on entire corpus for each language.
+
 
 | **Datasets** 	| **Docs** 	| **Training** 	| **Test** 	| **Words** 	| **Nodes** 	| **Classes** 	| **Average length** 	|
 |:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|:---:	|
@@ -53,8 +56,9 @@ Here, the dataset details were tabulated below.
 | Kannada 	| 36647 	| 34814 	| 1833 	| 35006 	| 44660 	| 9 	| 469.17 	|
 | Gujarathi 	| 36922 	| 35079 	| 1843 	| 50028 	| 47871 	| 11 	| 545.40 	|
 
+
 # Experimental Results [F1 Measure (weighted avg)]
-NLP Models and results download link: https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EmLpO8LUr-dHhEjQEmhcUQ4Bel2hVoCDyn_cIJA3yDtAJA?e=m0DwO1
+**NLP Models and results download link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EmLpO8LUr-dHhEjQEmhcUQ4Bel2hVoCDyn_cIJA3yDtAJA?e=m0DwO1
 
 | **Dataset** | **LSTM** | **Bi-LSTM** |  **GCN**  |   **GAT**  | **SAGE** | **BERT** |
 |-------------|:--------:|:-----------:|:---------:|:----------:|:--------:|:--------:|
@@ -70,7 +74,7 @@ NLP Models and results download link: https://iiitaphyd-my.sharepoint.com/:f:/g/
 | Marathi     |   0.53   |     0.42    | **0.699** |    0.695   |   0.68   |   0.68   |
 | Tamil       |   0.85   |   **0.86**  |    0.81   |    0.68    |   0.43   |   0.82   |
 | Malyalam    |   0.61   |     0.62    |     -     | **0.6269** |     -    |   0.62   |
-| Gujrathi    |   0.92   |     0.92    |     -     |      -     |     -    |     -    |
+| Gujrathi    |   0.92   |     0.92    |     -     |      -     |     -    | **0.93** |
 
 # Visualization
 
@@ -92,6 +96,3 @@ NLP Models and results download link: https://iiitaphyd-my.sharepoint.com/:f:/g/
  
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
 </div>
-
-
-Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
