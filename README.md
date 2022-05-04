@@ -27,12 +27,20 @@ negative reviews.
 | MR 	| 10,662 	| 7,108 	| 3,554 	| 18,764 	| 29,426 	| 2 	| 20.39 	|
 
 # Accuracy for SAGE and GAT
-| Datasets | GraphSAGE Accuracy | GAT Accuracy |
-|----------|--------------------|--------------|
-| 20NG     | 79.14              | 46.14        |
-| R8       | 95.20              | 91.96        |
-| R52      | 97.54              | 91.74        |
-| Ohsumed  | 98.56              | 89.71        |
-| MR       | 76.45              | 76.25        |
+| Datasets | GraphSAGE Accuracy | GAT Accuracy | GraphSAGE F1 score | GAT F1 score |
+|----------|--------------------|--------------|--------------------|--------------|
+| 20NG     | 79.14              | 46.42        | 79.14              | 46.41        |
+| R8       | 95.20              | 91.96        | 95.20              | 91.95        |
+| R52      | 97.54              | 91.74        | 97.54              | 91.74        |
+| Ohsumed  | 98.56              | 89.71        | 98.56              | 89.71        |
+| MR       | 76.45              | 76.25        | 76.44              | 76.25        |
+
+# Visualization
+
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/tsne_plots.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+
+Plot showing Movie Review dataset classification.
 
 Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
