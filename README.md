@@ -35,27 +35,45 @@ negative reviews.
 | Ohsumed  | 98.56              | 89.71        | 98.56              | 89.71        |
 | MR       | 76.45              | 76.25        | 76.44              | 76.25        |
 
+# Experimental Results [F1 Measure (weighted avg)]
+
+| **Dataset** | **LSTM** | **Bi-LSTM** |  **GCN**  |   **GAT**  | **SAGE** | **BERT** |
+|-------------|:--------:|:-----------:|:---------:|:----------:|:--------:|:--------:|
+| 20ng        |   0.62   |     0.74    |  **0.85** |    0.42    |   0.74   |   0.16   |
+| oshumed     |     -    |     0.44    |    0.68   |    0.87    | **0.97** |   0.21   |
+| R8          |   0.89   |     0.95    |  **0.96** |    0.90    |   0.94   |   0.93   |
+| R52         |     -    |      -      |    0.93   |    0.87    | **0.96** |     -    |
+| MR          |   0.72   |     0.72    |  **0.77** |    0.76    |   0.76   |   0.62   |
+| Hindi       |   0.92   |     0.94    |  **0.89** |  **0.84**  |   0.54   | **0.94** |
+| Telugu      |   0.85   |   **0.86**  |    0.63   |    0.73    |   0.69   |   0.54   |
+| Kannada     | **0.85** |     0.84    |    0.78   |    0.76    | **0.78** |   0.76   |
+| Bengali     |   0.53   |     0.54    |    0.68   |    0.73    |   0.67   | **0.76** |
+| Marathi     |   0.53   |     0.42    | **0.699** |    0.695   |   0.68   |   0.68   |
+| Tamil       |   0.85   |   **0.86**  |    0.81   |    0.68    |   0.43   |   0.82   |
+| Malyalam    |   0.61   |     0.62    |     -     | **0.6269** |     -    |   0.62   |
+| Gujrathi    |   0.92   |     0.92    |     -     |      -     |     -    |     -    |
+
 # Visualization
 
 <div align="center">    
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tsne_plots.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tsne_plots.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
  
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/bn_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/bn_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
  
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center /> 
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center /> 
  
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/mar_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/mar_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
 </div>
 </br>
 
 <div align="center">    
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ml_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ml_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
   
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ta_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ta_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
  
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
    
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="250px" height="200px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
 </div>
 
 Plot showing dataset classification.
