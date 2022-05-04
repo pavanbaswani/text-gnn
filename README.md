@@ -13,8 +13,22 @@ As attention mechanism has become powerful tool in almost all the sequence based
 # How to RUN
 1. Download the data files for the required model (NLP or GNN). Extract and place it in the data folder.
 2. For NLP models replace the train, dev, test csv paths with appropriate language file paths. Whereas the GNN models don't required to specify any path.
-3. To run the NLP models, use the jupyter notebook and description added for your reference.
-4. To run the GNN models, make sure you have the cuda enabled and run the below commands for any language.
+3. Create a new virtual environment
+
+using conda:
+```
+>>> conda create -n <env-name>
+```
+using pip
+```
+>>> python -m pip install --user virtualenv
+```
+4. Install the required packages using the requirements.txt file with the following command
+```
+>>> pip install -r requirements.txt
+```
+5. To run the NLP models, use the jupyter notebook and description added for your reference.
+6. To run the GNN models, make sure you have the cuda enabled and run the below commands for any language.
 
 Run the remove_words.py to preprocess the data and remove the stopwords and less frequent words (<5)
 
@@ -31,6 +45,11 @@ Run the run.py to run the experiments.
 **List of model-names:** ("GCN", "SAGE", "GAT")
 ```
 >>> python run.py --model <model-name> --cuda True --dataset <dataset-name>
+```
+To visualize the TSNE plot for the model results use the following command (before that change the dataset name in tsne.py file)
+
+```
+>>> python tsne.py
 ```
 
 # Dataset
