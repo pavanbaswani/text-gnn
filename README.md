@@ -10,6 +10,29 @@ Embeddings for nodes present in a graph are useful for almost all kind of applic
 # GAT 
 As attention mechanism has become powerful tool in almost all the sequence based task Dealing with variable sized inputs, focusing on the most relevant parts of the input to make decisions are some benefits of using attention mechanism. When an attention mechanism is used to compute a representation of a single sequence is known as self-attention. Graph Model Based on Attention Mechanism for Text Classification is also proved helpful as we are getting better accuracy than the LSTM and RNN.
 
+# How to RUN
+1. Download the data files for the required model (NLP or GNN). Extract and place it in the data folder.
+2. For NLP models replace the train, dev, test csv paths with appropriate language file paths. Whereas the GNN models don't required to specify any path.
+3. To run the NLP models, use the jupyter notebook and description added for your reference.
+4. To run the GNN models, make sure you have the cuda enabled and run the below commands for any language.
+
+Run the remove_words.py to preprocess the data and remove the stopwords and less frequent words (<5)
+
+**List of dataset-names:** ('20ng', 'R8', 'R52', 'ohsumed', 'mr', 'hin', 'tel', 'bn', 'gu', 'kn', 'ml', 'ta','mar')
+```
+>>> python remove_words.py <dataset-name>
+```
+Run the build_graph.py to prepare the graph using the entire corpus.
+```
+>>> python build_graph.py <dataset-name>
+```
+Run the run.py to run the experiments.
+
+**List of model-names:** ("GCN", "SAGE", "GAT")
+```
+>>> python run.py --model <model-name> --cuda True --dataset <dataset-name>
+```
+
 # Dataset
 **NLP Models data donwload link:** https://iiitaphyd-my.sharepoint.com/:f:/g/personal/pavan_baswani_research_iiit_ac_in/EhHbL4vdAXpPnpO7RdIx410BuyMr8exZK7uGFlsrE6iJEg?e=dTLoxb
 
