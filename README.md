@@ -119,3 +119,7 @@ Here, the required details about each dataset presented in the below table. For 
  
 <img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="200px" height="200px" alt="R8_gcn_test" align=center />
 </div>
+
+# References
+Graph Convolutional Networks for Text Classification - (https://arxiv.org/abs/1809.05679)
+The baseline code taken from the git repo (https://github.com/yao8839836/text_gcn) mentioned in the reference paper
