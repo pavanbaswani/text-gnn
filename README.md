@@ -38,9 +38,34 @@ negative reviews.
 # Visualization
 
 <div align="center">    
-<img src="https://github.com/pavanbaswani/text-gnn/blob/main/tsne_plots.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tsne_plots.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
 </div>
 
-Plot showing Movie Review dataset classification.
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/bn_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+
+
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/mar_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ml_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/ta_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/tel_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+<div align="center">    
+<img src="https://github.com/pavanbaswani/text-gnn/blob/main/plots/kn_gcn_doc_test.jpg?raw=true" width="500px" height="400px" alt="R8_gcn_test" align=center />
+</div>
+
+Plot showing dataset classification.
 
 Note: All the datasets used in this repository will be availabel at: https://tinyurl.com/3b4fafp3
